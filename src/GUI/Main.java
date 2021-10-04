@@ -30,21 +30,6 @@ public class Main {
         VaccineList vaccines = new VaccineList();
         Injections e = null;
         System.out.println("============================================");
-        if (!vaccines.loadFromFile("vaccine.txt")) {
-            System.err.println("Load Vaccines file failed");
-        } else {
-            System.err.println("Load Vaccines file successfull");
-        }
-        if (!students.loadFromFile("student.txt")) {
-            System.err.println("Load Students file failed");
-        } else {
-            System.err.println("Load Students file successfull");
-        }
-        if (!injections.loadFromFile("injection.txt")) {
-            System.err.println("Load Injections file failed");
-        } else {
-            System.err.println("Load Injections file successfull");
-        }
         menu.add("Show infomation all students have injected");
         menu.add("Add student's vaccine injection information");
         menu.add("Updating information of students' vaccine injection");
@@ -52,10 +37,26 @@ public class Main {
         menu.add("Search for injection information by studentID");
         menu.add("Save to file");
         menu.add("Quit");
+        
+        if (!vaccines.loadFromFile("vaccine.dat")) {
+            System.err.println("Load Vaccines file failed");
+        } else {
+            System.err.println("Load Vaccines file successfull");
+        }
+        if (!students.loadFromFile("student.dat")) {
+            System.err.println("Load Students file failed");
+        } else {
+            System.err.println("Load Students file successfull");
+        }
+        if (!injections.loadFromFile("injection.dat")) {
+            System.err.println("Load Injections file failed");
+        } else {
+            System.err.println("Load Injections file successfull");
+        }
         int choice;
         do {
-            System.out.println("===========================================");
             System.out.println("Welcome to Injections Management - @ 2021 by Dang Chi Thanh");
+            
             choice = menu.getChoice();
             switch (choice) {
                 case 1:
